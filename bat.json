@@ -1,0 +1,93 @@
+{
+	// Place your snippets for bat here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"if": {
+		"prefix": "if",
+		"body": [
+			"if %${1:variable}%==${2:value} (",
+				"\t${3:doSomething}",
+			")"
+		],
+		"description": "Basic if statements."
+	},
+	"if_else": {
+		"prefix": "if_else",
+		"body": [
+			"if %${1:variable}%==${2:value} (",
+				"\t${3:doSomething1}",
+			") else (",
+				"\t${4:doSomething2}",
+			")"
+		],
+		"description": "Basic if_else statements."
+	}
+	,
+	"for_current_directry": {
+		"prefix": "for_current_directrys_files",
+		"body": [
+			"for %%i in (*.${1:txt}) do (",
+			"\t${2:command} %%i",
+			")"
+		],
+		"description": "Basic for loop, each files in current directry."
+	}
+	,
+	"for_recursion": {
+		"prefix": "for_all_files_recursion",
+		"body": [
+			"for /r ${1:folder\\.} %%i in (*.${2:txt}) do (",
+			"\t${3:command} %%i",
+			")"
+		],
+		"description": "Basic for loop, all files.(recursion)"
+	}
+	,
+	"for_by_number": {
+		"prefix": "for_by_number",
+		"body": [
+			"for /l %%i in (${1:start}, ${2:step}, ${3:end}) do (",
+			"\t${4:command} %%i",
+			")"
+		],
+		"description": "Basic for loop."
+	}
+	,
+	"if_on_error": {
+		"prefix": "if_on_error",
+		"body": [
+			"if not %errorlevel%==0 (",
+				"\t${1:doSomething}",
+			")"
+		],
+		"description": "if_on_error"
+	}
+	,
+	"template": {
+		"prefix": "template",
+		"body": [
+			"@echo off",
+			"rem Template of CMD files.",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"exit /b 0",
+			"",
+			":ON_ERROR",
+			"exit /b 1"
+		],
+		"description": "if_on_error"
+	}
+}
